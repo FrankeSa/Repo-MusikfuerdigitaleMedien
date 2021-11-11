@@ -1,6 +1,6 @@
 window.addEventListener("load", handleLoad);
 
-function handleLoad(_event: Event) {
+function handleLoad(_event: Event): void {
 
-    console.log("Hallo Welt");
+    alert("Hallo Welt");
 }

@@ -1,6 +1,6 @@
 "use strict";
 window.addEventListener("load", handleLoad);
 function handleLoad(_event) {
-    console.log("Hallo Welt");
+    alert("Hallo Welt");
 }
 //# sourceMappingURL=main.js.map
