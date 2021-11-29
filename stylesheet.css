@@ -4,20 +4,36 @@ body {
 	grid-template-rows: auto auto
 }
 
-canvas {
-    background-color: blanchedalmond;
-	grid-template-columns: 1;
-
-    
+.wraper {
+	display: grid;
+    grid-template-columns: 100px;
+    grid-auto-rows: 100px;
+	padding: 3px;
 }
 
-div {
-	grid-template-columns: 2;
-	border: 3;
+canvas {
+    background-color: blanchedalmond;
+	grid-template-columns: 1;    
+}
+
+.color {
+	border: 2;
 	border-style: solid;
+	background-color: blue;
+	margin: 2px;
 
 }
 canvas:hover{    
-	border:solid #c8e90c;
+ 
 	cursor:pointer;
+}
+
+div{
+background-color:cadetblue;
+
+}
+
+#redBtn {
+background-color:crimson;
+
 }
