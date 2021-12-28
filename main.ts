@@ -7,6 +7,7 @@ let redBtn: HTMLDivElement;
 let greenBtn: HTMLDivElement;
 let blueBtn: HTMLDivElement;
 let clearBtn: HTMLButtonElement;
+var sound: HTMLAudioElement;
 
 function handleLoad(_event: Event): void {
     canvas = document.querySelector("canvas");
@@ -21,6 +22,7 @@ function handleLoad(_event: Event): void {
     redBtn.addEventListener("click", getColor);
     greenBtn.addEventListener("click", getColor);
     blueBtn.addEventListener("click", getColor);
+    blueBtn.addEventListener("click", blue);
     clearBtn.addEventListener("click", clearCanvas);
 
     canvas.addEventListener("mousedown", startPainting);
@@ -35,20 +37,8 @@ function getColor(_event: Event): void {
     console.log(colorType.id);
 }
 
-function startPainting(_event: MouseEvent): void {
-    painting = true;
-    console.log("Start Painting");
-}
-
-function stopPainting(_event: MouseEvent): void {
-    painting = false;
-    crc2.beginPath();
-    console.log("Stop Painting");
-}
-
 function draw(_event: MouseEvent): void {
     if (!painting) return; {
-
         crc2.lineWidth = 6;
         crc2.lineCap = "round";
         crc2.lineTo(_event.clientX, _event.clientY);
@@ -67,11 +57,45 @@ function draw(_event: MouseEvent): void {
                 crc2.strokeStyle = "blue";
                 break;
         }
+      
+        sound.play();
     }
 }
 
+function blue(_event: Event): void {
+
+    console.log("blau wurde gedrückt");
+    let tones: string = "MDM-Grundton_original.mp3";
+    sound = new Audio("assets/" + tones);
+}
+
+
+
+
+
+
+
 function clearCanvas(_event: Event): void {
     crc2.fillStyle = "rgb(253, 238, 215)";
-    crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height);  
+    crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height);
+}
 
+
+
+
+function startPainting(_event: MouseEvent): void {
+    // let tones: string = "Conga_low.wav";
+    // sound = new Audio("assets/" + tones);
+    // sound.play();
+    painting = true;
+    console.log("Start Painting");
+}
+
+
+
+function stopPainting(_event: MouseEvent): void {
+    painting = false;
+    crc2.beginPath();
+    sound.pause();
+    console.log("Stop Painting");
 }

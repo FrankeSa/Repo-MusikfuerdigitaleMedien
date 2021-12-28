@@ -8,6 +8,7 @@ let redBtn;
 let greenBtn;
 let blueBtn;
 let clearBtn;
+var sound;
 function handleLoad(_event) {
     canvas = document.querySelector("canvas");
     if (!canvas)
@@ -20,6 +21,7 @@ function handleLoad(_event) {
     redBtn.addEventListener("click", getColor);
     greenBtn.addEventListener("click", getColor);
     blueBtn.addEventListener("click", getColor);
+    blueBtn.addEventListener("click", blue);
     clearBtn.addEventListener("click", clearCanvas);
     canvas.addEventListener("mousedown", startPainting);
     canvas.addEventListener("mouseup", stopPainting);
@@ -30,15 +32,6 @@ function getColor(_event) {
     let colorType = _event.target;
     currentColor = colorType.id;
     console.log(colorType.id);
-}
-function startPainting(_event) {
-    painting = true;
-    console.log("Start Painting");
-}
-function stopPainting(_event) {
-    painting = false;
-    crc2.beginPath();
-    console.log("Stop Painting");
 }
 function draw(_event) {
     if (!painting)
@@ -61,10 +54,29 @@ function draw(_event) {
                 crc2.strokeStyle = "blue";
                 break;
         }
+        sound.play();
     }
+}
+function blue(_event) {
+    console.log("blau wurde gedrückt");
+    let tones = "MDM-Grundton_original.mp3";
+    sound = new Audio("assets/" + tones);
 }
 function clearCanvas(_event) {
     crc2.fillStyle = "rgb(253, 238, 215)";
     crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height);
+}
+function startPainting(_event) {
+    // let tones: string = "Conga_low.wav";
+    // sound = new Audio("assets/" + tones);
+    // sound.play();
+    painting = true;
+    console.log("Start Painting");
+}
+function stopPainting(_event) {
+    painting = false;
+    crc2.beginPath();
+    sound.pause();
+    console.log("Stop Painting");
 }
 //# sourceMappingURL=main.js.map
