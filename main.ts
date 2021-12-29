@@ -7,7 +7,13 @@ let redBtn: HTMLDivElement;
 let greenBtn: HTMLDivElement;
 let blueBtn: HTMLDivElement;
 let clearBtn: HTMLButtonElement;
-var sound: HTMLAudioElement;
+let sound: HTMLAudioElement;
+let audio: string;
+let redactiv: boolean = false;
+let blueactiv: boolean = false;
+let audioToPlay: string[] = [];
+let audioLib: string[] = ["MDM-Grundton_original.mp3", "Closed_Hit-Hat.wav", "Conga_low.wav"];
+
 
 function handleLoad(_event: Event): void {
     canvas = document.querySelector("canvas");
@@ -19,9 +25,9 @@ function handleLoad(_event: Event): void {
     blueBtn = <HTMLDivElement>document.querySelector("#blue");
     clearBtn = <HTMLButtonElement>document.querySelector("button");
 
-    redBtn.addEventListener("click", getColor);
+    redBtn.addEventListener("click", red);
     greenBtn.addEventListener("click", getColor);
-    blueBtn.addEventListener("click", getColor);
+    // blueBtn.addEventListener("click", getColor);
     blueBtn.addEventListener("click", blue);
     clearBtn.addEventListener("click", clearCanvas);
 
@@ -29,6 +35,7 @@ function handleLoad(_event: Event): void {
     canvas.addEventListener("mouseup", stopPainting);
     canvas.addEventListener("mousemove", draw);
     console.log("Hallo Welt");
+    
 }
 
 function getColor(_event: Event): void {
@@ -45,7 +52,6 @@ function draw(_event: MouseEvent): void {
         crc2.stroke();
         crc2.beginPath();
         crc2.moveTo(_event.clientX, _event.clientY);
-
         switch (currentColor) {
             case "red":
                 crc2.strokeStyle = "red";
@@ -57,20 +63,67 @@ function draw(_event: MouseEvent): void {
                 crc2.strokeStyle = "blue";
                 break;
         }
-      
         sound.play();
     }
+
 }
 
 function blue(_event: Event): void {
 
-    console.log("blau wurde gedrückt");
-    let tones: string = "MDM-Grundton_original.mp3";
-    sound = new Audio("assets/" + tones);
+    let colorType: HTMLDivElement = <HTMLDivElement>_event.target;
+    currentColor = colorType.id;
+    blueactiv = true;
+    redactiv = false;
+    // let status: boolean = audioToPlay.includes(audio);
+
+    // console.log(status);
+
+    let indexNumber: number = Math.floor((Math.random() * 3) + 0); // eine zufällige Zahl zwischen 0 und 3
+    audio = audioLib[indexNumber];
+    sound = new Audio("assets/" + audio);
+    audioToPlay.push(audio);
+    console.log(audioToPlay);
+    console.log("Status rot: ", redactiv, "Status blau: ", blueactiv);
+
+}
+
+function red(_event: Event): void {
+
+    let colorType: HTMLDivElement = <HTMLDivElement>_event.target;
+    currentColor = colorType.id;
+
+    redactiv = true;
+    blueactiv = false;
+
+
+    let indexNumber: number = Math.floor((Math.random() * 3) + 0); // eine zufällige Zahl zwischen 0 und 3
+    let audio: string = audioLib[indexNumber];
+
+    let status: boolean = audioToPlay.includes(audio);
+
+    console.log(status);
+
+    if (status == true) {
+        return;
+
+    } else {
+        sound = new Audio("assets/" + audio);
+        audioToPlay.push(audio);
+        console.log("ArrayToPlay: ", audioToPlay);
+    }
+    console.log("Status rot: ", redactiv, "Status blau: ", blueactiv);
+
+
+
 }
 
 
+function backgroundMusic(_sound: HTMLAudioElement): void {
 
+  
+    _sound.play();
+    console.log("HintergrundLied:", _sound);
+}
 
 
 
@@ -84,14 +137,11 @@ function clearCanvas(_event: Event): void {
 
 
 function startPainting(_event: MouseEvent): void {
-    // let tones: string = "Conga_low.wav";
-    // sound = new Audio("assets/" + tones);
-    // sound.play();
     painting = true;
     console.log("Start Painting");
+    backgroundMusic(sound);
+
 }
-
-
 
 function stopPainting(_event: MouseEvent): void {
     painting = false;
