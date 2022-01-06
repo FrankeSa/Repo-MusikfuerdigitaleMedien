@@ -13,7 +13,13 @@ let audio;
 let redactiv = false;
 let blueactiv = false;
 let audioToPlay = [];
-let audioLib = ["MDM-Grundton_original.mp3", "Closed_Hit-Hat.wav", "Conga_low.wav"];
+let audioLib = ["mdm-owl_1.wav",
+    "mdm-owl_2.wav",
+    "mdm-owl_3.wav",
+    "mdm-owl_4.wav",
+    "mdm-space_athmo.wav",
+    "mdm-tonesandi.wav"
+];
 function handleLoad(_event) {
     canvas = document.querySelector("canvas");
     if (!canvas)
@@ -81,12 +87,16 @@ function red(_event) {
     currentColor = colorType.id;
     redactiv = true;
     blueactiv = false;
-    let indexNumber = Math.floor((Math.random() * 3) + 0); // eine zufällige Zahl zwischen 0 und 3
+    let indexNumber = Math.floor((Math.random() * 6) + 0); // eine zufällige Zahl zwischen 0 und 3
     let audio = audioLib[indexNumber];
     let status = audioToPlay.includes(audio);
     console.log(status);
     if (status == true) {
-        return;
+        let indexNumber = Math.floor((Math.random() * 6) + 0); // eine zufällige Zahl zwischen 0 und x
+        let audio = audioLib[indexNumber];
+        sound = new Audio("assets/" + audio);
+        // audioToPlay.push(audio);
+        console.log("ArrayToPlay: ", audioToPlay);
     }
     else {
         sound = new Audio("assets/" + audio);

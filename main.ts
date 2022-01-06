@@ -12,7 +12,13 @@ let audio: string;
 let redactiv: boolean = false;
 let blueactiv: boolean = false;
 let audioToPlay: string[] = [];
-let audioLib: string[] = ["MDM-Grundton_original.mp3", "Closed_Hit-Hat.wav", "Conga_low.wav"];
+let audioLib: string[] = ["mdm-owl_1.wav",
+    "mdm-owl_2.wav",
+    "mdm-owl_3.wav",
+    "mdm-owl_4.wav",
+    "mdm-space_athmo.wav",
+    "mdm-tonesandi.wav"
+];
 
 
 function handleLoad(_event: Event): void {
@@ -35,7 +41,7 @@ function handleLoad(_event: Event): void {
     canvas.addEventListener("mouseup", stopPainting);
     canvas.addEventListener("mousemove", draw);
     console.log("Hallo Welt");
-    
+
 }
 
 function getColor(_event: Event): void {
@@ -96,7 +102,7 @@ function red(_event: Event): void {
     blueactiv = false;
 
 
-    let indexNumber: number = Math.floor((Math.random() * 3) + 0); // eine zufällige Zahl zwischen 0 und 3
+    let indexNumber: number = Math.floor((Math.random() * 6) + 0); // eine zufällige Zahl zwischen 0 und 3
     let audio: string = audioLib[indexNumber];
 
     let status: boolean = audioToPlay.includes(audio);
@@ -104,8 +110,11 @@ function red(_event: Event): void {
     console.log(status);
 
     if (status == true) {
-        return;
-
+        let indexNumber: number = Math.floor((Math.random() * 6) + 0); // eine zufällige Zahl zwischen 0 und x
+        let audio: string = audioLib[indexNumber];
+        sound = new Audio("assets/" + audio);
+        // audioToPlay.push(audio);
+        console.log("ArrayToPlay: ", audioToPlay);
     } else {
         sound = new Audio("assets/" + audio);
         audioToPlay.push(audio);
@@ -113,14 +122,14 @@ function red(_event: Event): void {
     }
     console.log("Status rot: ", redactiv, "Status blau: ", blueactiv);
 
-
+   
 
 }
 
 
 function backgroundMusic(_sound: HTMLAudioElement): void {
 
-  
+
     _sound.play();
     console.log("HintergrundLied:", _sound);
 }
