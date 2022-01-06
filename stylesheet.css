@@ -6,8 +6,9 @@ body {
 
 .wraper {
 	display: grid;
-    grid-template-columns: 100px;
+	grid-template-columns: 100px 100px 100px;
     grid-auto-rows: 100px;
+    justify-content: center;
 	padding: 3px;
 }
 
@@ -17,10 +18,11 @@ canvas {
 }
 
 .color {
-	border: 2;
-	border-style: solid;
+	/* border: 1;
+	border-style: solid; */
 	background-color: blue;
 	margin: 2px;
+	border-radius: 100%;
 
 }
 canvas:hover{    
@@ -35,6 +37,7 @@ background-color:cadetblue;
 
 #red {
 background-color:crimson;
+
 }
 #green {
 	background-color: darkgreen;
@@ -43,3 +46,15 @@ background-color:crimson;
 #blue {
 background-color: blue;
 }
+#yellow {
+	background-color:rgb(255, 238, 0);
+	
+	}
+#orange {
+	background-color: rgb(235, 113, 0);
+	}
+	
+#black {
+	
+	background-color: rgb(0, 0, 0);
+	}

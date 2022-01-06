@@ -18,7 +18,14 @@ let audioLib = ["mdm-owl_1.wav",
     "mdm-owl_3.wav",
     "mdm-owl_4.wav",
     "mdm-space_athmo.wav",
-    "mdm-tonesandi.wav"
+    "mdm-tonesandi.wav",
+    "mdm-swoosch.wav",
+    "mdm-wald_1.wav",
+    "mdm-wald_2.wav",
+    "mdm-wald_3.wav",
+    "mdm-wald_4.wav",
+    "mdm-wasser.wav",
+    "mdm-tones_g.wav"
 ];
 function handleLoad(_event) {
     canvas = document.querySelector("canvas");
@@ -71,28 +78,14 @@ function draw(_event) {
 function blue(_event) {
     let colorType = _event.target;
     currentColor = colorType.id;
-    blueactiv = true;
     redactiv = false;
-    // let status: boolean = audioToPlay.includes(audio);
-    // console.log(status);
-    let indexNumber = Math.floor((Math.random() * 3) + 0); // eine zufällige Zahl zwischen 0 und 3
-    audio = audioLib[indexNumber];
-    sound = new Audio("assets/" + audio);
-    audioToPlay.push(audio);
-    console.log(audioToPlay);
-    console.log("Status rot: ", redactiv, "Status blau: ", blueactiv);
-}
-function red(_event) {
-    let colorType = _event.target;
-    currentColor = colorType.id;
-    redactiv = true;
-    blueactiv = false;
-    let indexNumber = Math.floor((Math.random() * 6) + 0); // eine zufällige Zahl zwischen 0 und 3
+    blueactiv = true;
+    let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
     let audio = audioLib[indexNumber];
     let status = audioToPlay.includes(audio);
     console.log(status);
     if (status == true) {
-        let indexNumber = Math.floor((Math.random() * 6) + 0); // eine zufällige Zahl zwischen 0 und x
+        let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
         // audioToPlay.push(audio);
@@ -105,9 +98,28 @@ function red(_event) {
     }
     console.log("Status rot: ", redactiv, "Status blau: ", blueactiv);
 }
-function backgroundMusic(_sound) {
-    _sound.play();
-    console.log("HintergrundLied:", _sound);
+function red(_event) {
+    let colorType = _event.target;
+    currentColor = colorType.id;
+    redactiv = true;
+    blueactiv = false;
+    let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
+    let audio = audioLib[indexNumber];
+    let status = audioToPlay.includes(audio);
+    console.log(status);
+    if (status == true) {
+        let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
+        let audio = audioLib[indexNumber];
+        sound = new Audio("assets/" + audio);
+        // audioToPlay.push(audio);
+        console.log("ArrayToPlay: ", audioToPlay);
+    }
+    else {
+        sound = new Audio("assets/" + audio);
+        audioToPlay.push(audio);
+        console.log("ArrayToPlay: ", audioToPlay);
+    }
+    console.log("Status rot: ", redactiv, "Status blau: ", blueactiv);
 }
 function clearCanvas(_event) {
     crc2.fillStyle = "rgb(253, 238, 215)";
@@ -116,7 +128,6 @@ function clearCanvas(_event) {
 function startPainting(_event) {
     painting = true;
     console.log("Start Painting");
-    backgroundMusic(sound);
 }
 function stopPainting(_event) {
     painting = false;
@@ -124,4 +135,8 @@ function stopPainting(_event) {
     sound.pause();
     console.log("Stop Painting");
 }
+// function backgroundMusic(_sound: HTMLAudioElement): void {
+//     _sound.play();
+//     console.log("HintergrundLied:", _sound);
+// }
 //# sourceMappingURL=main.js.map
