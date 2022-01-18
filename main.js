@@ -54,7 +54,7 @@ function handleLoad(_event) {
     blackBtn.addEventListener("click", orange);
     purpleBtn.addEventListener("click", purple);
     clearBtn.addEventListener("click", clearCanvas);
-    okBtn.addEventListener("click", buttonS);
+    okBtn.addEventListener("click", trensferSound);
     canvas.addEventListener("mousedown", startPainting);
     canvas.addEventListener("mouseup", stopPainting);
     canvas.addEventListener("mousemove", draw);
@@ -63,12 +63,9 @@ function handleLoad(_event) {
 function red(_event) {
     let colorType = _event.target;
     currentColor = colorType.id;
-    redactiv = true;
-    blueactiv = false;
     let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
     let audio = audioLib[indexNumber];
     let status = audioToPlay.includes(audio);
-    console.log(status);
     if (status == true) {
         let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio = audioLib[indexNumber];
@@ -81,64 +78,42 @@ function red(_event) {
         audioToPlay.push(audio);
         console.log("ArrayToPlay: ", audioToPlay);
     }
-    console.log("Status rot: ", redactiv, "Status blau: ", blueactiv);
 }
 function green(_event) {
     let colorType = _event.target;
     currentColor = colorType.id;
-    redactiv = true;
-    blueactiv = false;
     let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
     let audio = audioLib[indexNumber];
     let status = audioToPlay.includes(audio);
-    console.log(status);
     if (status == true) {
         let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
-        // audioToPlay.push(audio);
-        console.log("ArrayToPlay: ", audioToPlay);
     }
     else {
         sound = new Audio("assets/" + audio);
         audioToPlay.push(audio);
-        console.log("ArrayToPlay: ", audioToPlay);
     }
-    // if (blueactiv == false) {
-    //     backgroundMusic(sound);
-    // }
 }
 function blue(_event) {
     let colorType = _event.target;
     currentColor = colorType.id;
-    redactiv = false;
-    blueactiv = true;
-    // sarah(redactiv);
     let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
     let audio = audioLib[indexNumber];
     let status = audioToPlay.includes(audio);
-    console.log(status);
     if (status == true) {
         let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
-        console.log("ArrayToPlay: ", audioToPlay);
     }
     else {
         sound = new Audio("assets/" + audio);
         audioToPlay.push(audio);
-        console.log("ArrayToPlay: ", audioToPlay);
     }
-    // if (redactiv == false) {
-    //     backgroundMusic(sound);
-    // }
-    console.log("Status rot: ", redactiv, "Status blau: ", blueactiv);
 }
 function yellow(_event) {
     let colorType = _event.target;
     currentColor = colorType.id;
-    // // redactiv = true;
-    // // blueactiv = false;
     let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
     let audio = audioLib[indexNumber];
     let status = audioToPlay.includes(audio);
@@ -146,19 +121,15 @@ function yellow(_event) {
         let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
-        console.log("ArrayToPlay: ", audioToPlay);
     }
     else {
         sound = new Audio("assets/" + audio);
         audioToPlay.push(audio);
-        console.log("ArrayToPlay: ", audioToPlay);
     }
 }
 function orange(_event) {
     let colorType = _event.target;
     currentColor = colorType.id;
-    // // redactiv = true;
-    // // blueactiv = false;
     let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
     let audio = audioLib[indexNumber];
     let status = audioToPlay.includes(audio);
@@ -166,19 +137,15 @@ function orange(_event) {
         let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
-        console.log("ArrayToPlay: ", audioToPlay);
     }
     else {
         sound = new Audio("assets/" + audio);
         audioToPlay.push(audio);
-        console.log("ArrayToPlay: ", audioToPlay);
     }
 }
 function black(_event) {
     let colorType = _event.target;
     currentColor = colorType.id;
-    // // redactiv = true;
-    // // blueactiv = false;
     let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
     let audio = audioLib[indexNumber];
     let status = audioToPlay.includes(audio);
@@ -186,19 +153,15 @@ function black(_event) {
         let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
-        console.log("ArrayToPlay: ", audioToPlay);
     }
     else {
         sound = new Audio("assets/" + audio);
         audioToPlay.push(audio);
-        console.log("ArrayToPlay: ", audioToPlay);
     }
 }
 function purple(_event) {
     let colorType = _event.target;
     currentColor = colorType.id;
-    // // redactiv = true;
-    // // blueactiv = false;
     let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
     let audio = audioLib[indexNumber];
     let status = audioToPlay.includes(audio);
@@ -206,12 +169,10 @@ function purple(_event) {
         let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
-        console.log("ArrayToPlay: ", audioToPlay);
     }
     else {
         sound = new Audio("assets/" + audio);
         audioToPlay.push(audio);
-        console.log("ArrayToPlay: ", audioToPlay);
     }
 }
 function draw(_event) {
@@ -250,16 +211,6 @@ function draw(_event) {
         sound.play();
     }
 }
-// function sarah(_redactiv: boolean): void {
-//     if (_redactiv == false) {
-//         alert("Hallo Sarah");
-//     }
-// }
-function clearCanvas(_event) {
-    crc2.fillStyle = "rgb(253, 238, 215)";
-    crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height);
-    sound.pause();
-}
 function startPainting(_event) {
     painting = true;
     console.log("Start Painting");
@@ -270,11 +221,15 @@ function stopPainting(_event) {
     sound.pause();
     console.log("Stop Painting");
 }
-function buttonS(_event) {
+function trensferSound(_event) {
     backgroundMusic(sound);
+    console.log(sound);
 }
 function backgroundMusic(_sound) {
     _sound.play();
     console.log("HintergrundLied:", _sound);
+}
+function clearCanvas(_event) {
+    location.reload();
 }
 //# sourceMappingURL=main.js.map

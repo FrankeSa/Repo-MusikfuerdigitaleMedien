@@ -15,11 +15,10 @@ body {
 canvas {
     background-color: rgb(253, 238, 215);
 	grid-template-columns: 1;    
+	box-shadow: 3px 3px 4px #5f6468;
 }
 
 .color {
-	/* border: 1;
-	border-style: solid; */
 	margin: 4px;
 	border-radius: 100%;
 
@@ -31,14 +30,23 @@ canvas:hover{
 }
 
 div{
-background-color:#5f9ea0;
+background-color:#a5a5a5;
+border-radius: 5%;
+box-shadow: 3px 3px 4px #5f6468;
 
 }
 
 #red {
 background-color:#dc143c;
-
 }
+
+#red:hover {
+	cursor:pointer;
+	opacity: 50%;
+	width: 90%;
+	height: 90%;
+}
+
 #green {
 	background-color: #006400;
 }
@@ -46,30 +54,75 @@ background-color:#dc143c;
 #green:hover {
 	cursor:pointer;
 	opacity: 50%;
-
+	width: 90%;
+	height: 90%;
 }
 
 #blue {
 background-color: #0000ff;
+box-shadow: 3px 3px 4px #55585a;
 }
+
+#blue:hover {
+	cursor:pointer;
+	opacity: 50%;
+	width: 90%;
+	height: 90%;
+}
+
 #yellow {
 	background-color:#ffee00;
-	
+	box-shadow: 3px 3px 4px #55585a;	
 	}
+#yellow:hover {
+	cursor:pointer;
+	opacity: 50%;
+	width: 90%;
+	height: 90%;
+}
+
 #orange {
 	background-color: #eb7100;
+	box-shadow: 3px 3px 4px #55585a;
 	}
+
+#orange:hover {
+	cursor:pointer;
+	opacity: 50%;
+	width: 90%;
+	height: 90%;
+}
 	
 #black {	
 	background-color: #000000;
+	box-shadow: 3px 3px 4px #55585a;
 	}
+
+#black:hover {
+	cursor:pointer;
+	opacity: 50%;
+	width: 90%;
+	height: 90%;
+}
+
+
 #purple {	
 	background-color: #aa06d3;
+	box-shadow: 3px 3px 4px #55585a;
 	}
 
-	button {
+#purple:hover {
+cursor:pointer;
+opacity: 50%;
+width: 90%;
+height: 90%;
+	}
 
-		width: 200px;
-		margin: 30px;
-		margin-left: 80px;
+button {
+
+width: 200px;
+margin: 30px;
+margin-left: 80px;
+box-shadow: 3px 3px 4px #55585a;
+font-size: medium;
 	}

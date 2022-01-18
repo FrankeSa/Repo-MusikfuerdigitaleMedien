@@ -47,7 +47,6 @@ function handleLoad(_event: Event): void {
     purpleBtn = <HTMLDivElement>document.querySelector("#purple");
     okBtn = <HTMLButtonElement>document.querySelector("#ok");
     clearBtn = <HTMLButtonElement>document.querySelector("#clear");
-
     redBtn.addEventListener("click", red);
     greenBtn.addEventListener("click", green);
     blueBtn.addEventListener("click", blue);
@@ -56,31 +55,20 @@ function handleLoad(_event: Event): void {
     blackBtn.addEventListener("click", orange);
     purpleBtn.addEventListener("click", purple);
     clearBtn.addEventListener("click", clearCanvas);
-    okBtn.addEventListener("click", buttonS);
-
+    okBtn.addEventListener("click", trensferSound);
     canvas.addEventListener("mousedown", startPainting);
     canvas.addEventListener("mouseup", stopPainting);
     canvas.addEventListener("mousemove", draw);
     console.log("Hallo Welt");
-
 }
 
 function red(_event: Event): void {
 
     let colorType: HTMLDivElement = <HTMLDivElement>_event.target;
     currentColor = colorType.id;
-
-    redactiv = true;
-    blueactiv = false;
-
-
     let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
     let audio: string = audioLib[indexNumber];
-
     let status: boolean = audioToPlay.includes(audio);
-
-    console.log(status);
-
     if (status == true) {
         let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio: string = audioLib[indexNumber];
@@ -92,101 +80,72 @@ function red(_event: Event): void {
         audioToPlay.push(audio);
         console.log("ArrayToPlay: ", audioToPlay);
     }
-    console.log("Status rot: ", redactiv, "Status blau: ", blueactiv);
+
 }
 
 function green(_event: Event): void {
 
     let colorType: HTMLDivElement = <HTMLDivElement>_event.target;
     currentColor = colorType.id;
-
-    redactiv = true;
-    blueactiv = false;
-
     let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
     let audio: string = audioLib[indexNumber];
-
     let status: boolean = audioToPlay.includes(audio);
-
-    console.log(status);
 
     if (status == true) {
         let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio: string = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
-        // audioToPlay.push(audio);
-        console.log("ArrayToPlay: ", audioToPlay);
+       
     } else {
         sound = new Audio("assets/" + audio);
         audioToPlay.push(audio);
-        console.log("ArrayToPlay: ", audioToPlay);
-    }
-    // if (blueactiv == false) {
-    //     backgroundMusic(sound);
-    // }
+        }
 }
 
 function blue(_event: Event): void {
     let colorType: HTMLDivElement = <HTMLDivElement>_event.target;
     currentColor = colorType.id;
-
-    redactiv = false;
-    blueactiv = true;
-    // sarah(redactiv);
-
-
     let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
     let audio: string = audioLib[indexNumber];
 
     let status: boolean = audioToPlay.includes(audio);
 
-    console.log(status);
-
     if (status == true) {
         let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio: string = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
-        console.log("ArrayToPlay: ", audioToPlay);
+      
     } else {
         sound = new Audio("assets/" + audio);
         audioToPlay.push(audio);
-        console.log("ArrayToPlay: ", audioToPlay);
+  
     }
-    // if (redactiv == false) {
-    //     backgroundMusic(sound);
-    // }
-    console.log("Status rot: ", redactiv, "Status blau: ", blueactiv);
+
 }
 
 function yellow(_event: Event): void {
     let colorType: HTMLDivElement = <HTMLDivElement>_event.target;
     currentColor = colorType.id;
 
-    // // redactiv = true;
-    // // blueactiv = false;
     let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
     let audio: string = audioLib[indexNumber];
-
     let status: boolean = audioToPlay.includes(audio);
 
     if (status == true) {
         let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio: string = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
-        console.log("ArrayToPlay: ", audioToPlay);
+       
     } else {
         sound = new Audio("assets/" + audio);
         audioToPlay.push(audio);
-        console.log("ArrayToPlay: ", audioToPlay);
+   
     }
 }
 
 function orange(_event: Event): void {
     let colorType: HTMLDivElement = <HTMLDivElement>_event.target;
     currentColor = colorType.id;
-
-    // // redactiv = true;
-    // // blueactiv = false;
     let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
     let audio: string = audioLib[indexNumber];
 
@@ -196,11 +155,11 @@ function orange(_event: Event): void {
         let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio: string = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
-        console.log("ArrayToPlay: ", audioToPlay);
+       
     } else {
         sound = new Audio("assets/" + audio);
         audioToPlay.push(audio);
-        console.log("ArrayToPlay: ", audioToPlay);
+    
     }
 }
 
@@ -208,9 +167,6 @@ function orange(_event: Event): void {
 function black(_event: Event): void {
     let colorType: HTMLDivElement = <HTMLDivElement>_event.target;
     currentColor = colorType.id;
-
-    // // redactiv = true;
-    // // blueactiv = false;
     let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
     let audio: string = audioLib[indexNumber];
 
@@ -220,11 +176,11 @@ function black(_event: Event): void {
         let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio: string = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
-        console.log("ArrayToPlay: ", audioToPlay);
+      
     } else {
         sound = new Audio("assets/" + audio);
         audioToPlay.push(audio);
-        console.log("ArrayToPlay: ", audioToPlay);
+      
     }
 }
 
@@ -232,8 +188,6 @@ function purple(_event: Event): void {
     let colorType: HTMLDivElement = <HTMLDivElement>_event.target;
     currentColor = colorType.id;
 
-    // // redactiv = true;
-    // // blueactiv = false;
     let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
     let audio: string = audioLib[indexNumber];
 
@@ -243,11 +197,11 @@ function purple(_event: Event): void {
         let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio: string = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
-        console.log("ArrayToPlay: ", audioToPlay);
+    
     } else {
         sound = new Audio("assets/" + audio);
         audioToPlay.push(audio);
-        console.log("ArrayToPlay: ", audioToPlay);
+    
     }
 
 }
@@ -289,30 +243,6 @@ function draw(_event: MouseEvent): void {
     }
 }
 
-
-
-
-// function sarah(_redactiv: boolean): void {
-//     if (_redactiv == false) {
-//         alert("Hallo Sarah");
-//     }
-
-// }
-
-
-
-
-
-
-function clearCanvas(_event: Event): void {
-    crc2.fillStyle = "rgb(253, 238, 215)";
-    crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height);
-    sound.pause();
-}
-
-
-
-
 function startPainting(_event: MouseEvent): void {
     painting = true;
     console.log("Start Painting");
@@ -324,13 +254,18 @@ function stopPainting(_event: MouseEvent): void {
     sound.pause();
     console.log("Stop Painting");
 }
-function buttonS(_event: Event): void {
+
+function trensferSound(_event: Event): void {
     backgroundMusic(sound);
+    console.log(sound);
 
 }
 function backgroundMusic(_sound: HTMLAudioElement): void {
-
-
     _sound.play();
     console.log("HintergrundLied:", _sound);
+}
+
+function clearCanvas(_event: Event): void {
+    location.reload();
+
 }
