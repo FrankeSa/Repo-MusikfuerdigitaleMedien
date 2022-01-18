@@ -29,7 +29,9 @@ let audioLib: string[] = ["mdm-owl_1.wav",
     "mdm-wald_3.wav",
     "mdm-wald_4.wav",
     "mdm-wasser.wav",
-    "mdm-tones_g.wav"
+    "mdm-tones_g.wav",
+    "mdm-conga.wav",
+    "mdm-waveformall.wav"
 ];
 
 
@@ -66,11 +68,11 @@ function red(_event: Event): void {
 
     let colorType: HTMLDivElement = <HTMLDivElement>_event.target;
     currentColor = colorType.id;
-    let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
+    let indexNumber: number = Math.floor((Math.random() * 15) + 0); 
     let audio: string = audioLib[indexNumber];
     let status: boolean = audioToPlay.includes(audio);
     if (status == true) {
-        let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
+        let indexNumber: number = Math.floor((Math.random() * 15) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio: string = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
         // audioToPlay.push(audio);
@@ -87,12 +89,12 @@ function green(_event: Event): void {
 
     let colorType: HTMLDivElement = <HTMLDivElement>_event.target;
     currentColor = colorType.id;
-    let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
+    let indexNumber: number = Math.floor((Math.random() * 15) + 0);
     let audio: string = audioLib[indexNumber];
     let status: boolean = audioToPlay.includes(audio);
 
     if (status == true) {
-        let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
+        let indexNumber: number = Math.floor((Math.random() * 15) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio: string = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
        
@@ -105,13 +107,13 @@ function green(_event: Event): void {
 function blue(_event: Event): void {
     let colorType: HTMLDivElement = <HTMLDivElement>_event.target;
     currentColor = colorType.id;
-    let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
+    let indexNumber: number = Math.floor((Math.random() * 15) + 0); 
     let audio: string = audioLib[indexNumber];
 
     let status: boolean = audioToPlay.includes(audio);
 
     if (status == true) {
-        let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
+        let indexNumber: number = Math.floor((Math.random() * 15) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio: string = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
       
@@ -127,12 +129,12 @@ function yellow(_event: Event): void {
     let colorType: HTMLDivElement = <HTMLDivElement>_event.target;
     currentColor = colorType.id;
 
-    let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
+    let indexNumber: number = Math.floor((Math.random() * 15) + 0); 
     let audio: string = audioLib[indexNumber];
     let status: boolean = audioToPlay.includes(audio);
 
     if (status == true) {
-        let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
+        let indexNumber: number = Math.floor((Math.random() * 15) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio: string = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
        
@@ -146,13 +148,13 @@ function yellow(_event: Event): void {
 function orange(_event: Event): void {
     let colorType: HTMLDivElement = <HTMLDivElement>_event.target;
     currentColor = colorType.id;
-    let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
+    let indexNumber: number = Math.floor((Math.random() * 15) + 0); 
     let audio: string = audioLib[indexNumber];
 
     let status: boolean = audioToPlay.includes(audio);
 
     if (status == true) {
-        let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
+        let indexNumber: number = Math.floor((Math.random() * 15) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio: string = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
        
@@ -167,13 +169,13 @@ function orange(_event: Event): void {
 function black(_event: Event): void {
     let colorType: HTMLDivElement = <HTMLDivElement>_event.target;
     currentColor = colorType.id;
-    let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
+    let indexNumber: number = Math.floor((Math.random() * 15) + 0); 
     let audio: string = audioLib[indexNumber];
 
     let status: boolean = audioToPlay.includes(audio);
 
     if (status == true) {
-        let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
+        let indexNumber: number = Math.floor((Math.random() * 15) + 0); 
         let audio: string = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
       
@@ -188,13 +190,13 @@ function purple(_event: Event): void {
     let colorType: HTMLDivElement = <HTMLDivElement>_event.target;
     currentColor = colorType.id;
 
-    let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
+    let indexNumber: number = Math.floor((Math.random() * 15) + 0); 
     let audio: string = audioLib[indexNumber];
 
     let status: boolean = audioToPlay.includes(audio);
 
     if (status == true) {
-        let indexNumber: number = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
+        let indexNumber: number = Math.floor((Math.random() * 15) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio: string = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
     

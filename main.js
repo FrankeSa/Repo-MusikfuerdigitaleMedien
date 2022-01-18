@@ -30,7 +30,9 @@ let audioLib = ["mdm-owl_1.wav",
     "mdm-wald_3.wav",
     "mdm-wald_4.wav",
     "mdm-wasser.wav",
-    "mdm-tones_g.wav"
+    "mdm-tones_g.wav",
+    "mdm-conga.wav",
+    "mdm-waveformall.wav"
 ];
 function handleLoad(_event) {
     canvas = document.querySelector("canvas");
@@ -63,11 +65,11 @@ function handleLoad(_event) {
 function red(_event) {
     let colorType = _event.target;
     currentColor = colorType.id;
-    let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
+    let indexNumber = Math.floor((Math.random() * 15) + 0);
     let audio = audioLib[indexNumber];
     let status = audioToPlay.includes(audio);
     if (status == true) {
-        let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
+        let indexNumber = Math.floor((Math.random() * 15) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
         // audioToPlay.push(audio);
@@ -82,11 +84,11 @@ function red(_event) {
 function green(_event) {
     let colorType = _event.target;
     currentColor = colorType.id;
-    let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
+    let indexNumber = Math.floor((Math.random() * 15) + 0);
     let audio = audioLib[indexNumber];
     let status = audioToPlay.includes(audio);
     if (status == true) {
-        let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
+        let indexNumber = Math.floor((Math.random() * 15) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
     }
@@ -98,11 +100,11 @@ function green(_event) {
 function blue(_event) {
     let colorType = _event.target;
     currentColor = colorType.id;
-    let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
+    let indexNumber = Math.floor((Math.random() * 15) + 0);
     let audio = audioLib[indexNumber];
     let status = audioToPlay.includes(audio);
     if (status == true) {
-        let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
+        let indexNumber = Math.floor((Math.random() * 15) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
     }
@@ -114,11 +116,11 @@ function blue(_event) {
 function yellow(_event) {
     let colorType = _event.target;
     currentColor = colorType.id;
-    let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
+    let indexNumber = Math.floor((Math.random() * 15) + 0);
     let audio = audioLib[indexNumber];
     let status = audioToPlay.includes(audio);
     if (status == true) {
-        let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
+        let indexNumber = Math.floor((Math.random() * 15) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
     }
@@ -130,11 +132,11 @@ function yellow(_event) {
 function orange(_event) {
     let colorType = _event.target;
     currentColor = colorType.id;
-    let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
+    let indexNumber = Math.floor((Math.random() * 15) + 0);
     let audio = audioLib[indexNumber];
     let status = audioToPlay.includes(audio);
     if (status == true) {
-        let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
+        let indexNumber = Math.floor((Math.random() * 15) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
     }
@@ -146,11 +148,11 @@ function orange(_event) {
 function black(_event) {
     let colorType = _event.target;
     currentColor = colorType.id;
-    let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
+    let indexNumber = Math.floor((Math.random() * 15) + 0);
     let audio = audioLib[indexNumber];
     let status = audioToPlay.includes(audio);
     if (status == true) {
-        let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
+        let indexNumber = Math.floor((Math.random() * 15) + 0);
         let audio = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
     }
@@ -162,11 +164,11 @@ function black(_event) {
 function purple(_event) {
     let colorType = _event.target;
     currentColor = colorType.id;
-    let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und 3
+    let indexNumber = Math.floor((Math.random() * 15) + 0);
     let audio = audioLib[indexNumber];
     let status = audioToPlay.includes(audio);
     if (status == true) {
-        let indexNumber = Math.floor((Math.random() * 13) + 0); // eine zufällige Zahl zwischen 0 und x
+        let indexNumber = Math.floor((Math.random() * 15) + 0); // eine zufällige Zahl zwischen 0 und x
         let audio = audioLib[indexNumber];
         sound = new Audio("assets/" + audio);
     }
